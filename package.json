@@ -1,0 +1,11 @@
+{
+  "name": "js-first-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vertx run --redeploy=\"./src/*.js\" --launcher-class=io.vertx.core.Launcher ./src/server.js",
+    "start_websocket": "vertx run --redeploy=\"./src/*.js\" --launcher-class=io.vertx.core.Launcher ./src/websocket.js"
+  },
+  "author": "developerworks <developerworks@163.com>",
+  "license": "MIT"
+}
