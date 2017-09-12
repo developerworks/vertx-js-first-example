@@ -1,5 +1,6 @@
 var Buffer = require("vertx-js/buffer");
 var WebSocketFrame = require("vertx-js/web_socket_frame")
+var WebsocketHander = require("./websocket_handler")
 
 var options = {
   "logActivity": true,
@@ -18,9 +19,7 @@ server.websocketHandler(function (websocket) {
   console.log('Connection info: %s', JSON.stringify(connection_info))
   var message = "hello";
   websocket.writeTextMessage(JSON.stringify(options));
-  websocket.frameHandler(function (frame) {
-    console.log("Frame received", frame)
-  })
+  WebsocketHander.handler(websocket)
 })
 
 // 通过HTTP升级的方式
